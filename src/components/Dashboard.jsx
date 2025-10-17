@@ -98,7 +98,7 @@ function Dashboard() {
                     <p className="text-sm text-gray-500">Ref: {client.ref}</p>
                   </div>
                 </div>
-                <button className="text-gray-500 hover:text-gray-700">•••</button>
+                <button className="text-gray-500 hover:text-gray-800">•••</button>
               </div>
 
               <div className="bg-purple-50 p-3 rounded space-y-2 text-sm text-gray-700">

@@ -34,7 +34,6 @@ function App() {
           <Route path='setting' element={<Setting />} />
 
         </Route>
-        <Route path='add' element={<Add />} />
 
       </Routes>
     </BrowserRouter>
