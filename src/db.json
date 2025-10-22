@@ -1,0 +1,148 @@
+{
+  "clients": [
+    {
+      "name": "testing",
+      "ref": "CLNT-0017",
+      "contactName": "Emma Johnson",
+      "email": "testdd@gmail.com",
+      "phone": "+91 8874563215",
+      "avatar": "T",
+      "id": "2f42"
+    },
+    {
+      "name": "Antrim",
+      "ref": "CLNT-0016",
+      "contactName": "Peter",
+      "email": "amtrimw@gmail.com",
+      "phone": "9003976023",
+      "avatar": "A",
+      "id": "4739"
+    },
+    {
+      "name": "Parkqwik",
+      "ref": "CLNT-0015",
+      "contactName": "James Brown",
+      "email": "parkqwik@gmail.com",
+      "phone": "+91 9003976093",
+      "avatar": "P",
+      "id": "c170"
+    },
+    {
+      "name": "newcom",
+      "ref": "CLNT-0014",
+      "contactName": "Emma Johnson",
+      "email": "test@gmail.com",
+      "phone": "+91 8874563211",
+      "avatar": "N",
+      "id": "2539"
+    },
+    {
+      "id": "399c",
+      "name": "Toyato",
+      "ref": "CLNT-0017",
+      "contactName": "jeevan",
+      "email": "support@numota.in",
+      "phone": "8765432198",
+      "avatar": "A"
+    },
+    {
+      "id": "aa59",
+      "name": "poda",
+      "ref": "CLNT-0017",
+      "contactName": "jeevan",
+      "email": "admin@nutask.in",
+      "phone": "765457878",
+      "avatar": "A"
+    },
+    {
+      "id": "d02c",
+      "name": "Tata",
+      "ref": "CLNT-0017",
+      "contactName": "Arun",
+      "email": "jeevanlesly22@gmail.com",
+      "phone": "8383747438",
+      "avatar": "A"
+    },
+    {
+      "id": "fe0c",
+      "name": "Numota",
+      "ref": "CLNT-0017",
+      "contactName": "Smoke",
+      "email": "jeevanlesly12@gmail.com",
+      "phone": "8383747438",
+      "avatar": "A"
+    },
+    {
+      "id": "a39d",
+      "name": "Toyato",
+      "ref": "CLNT-0017",
+      "contactName": "jeevan",
+      "email": "support@numota.in",
+      "phone": "8383747438",
+      "avatar": "A"
+    },
+    {
+      "id": "a2a6",
+      "name": "Toyato",
+      "ref": "CLNT-0017",
+      "contactName": "jeevan",
+      "email": "support@numota.in",
+      "phone": "8383747438",
+      "avatar": "A"
+    },
+    {
+      "id": "9265",
+      "name": "Tata",
+      "ref": "CLNT-0017",
+      "contactName": "Gas_Alert",
+      "email": "support@numota.in",
+      "phone": "8765432198",
+      "avatar": "A"
+    },
+    {
+      "id": "6f1b",
+      "name": "Tata",
+      "ref": "CLNT-0017",
+      "contactName": "gas leakage",
+      "email": "support@numota.in",
+      "phone": "8383747438",
+      "avatar": "A"
+    },
+    {
+      "id": "3663",
+      "name": "Toyato",
+      "ref": "CLNT-0017",
+      "contactName": "jeevan",
+      "email": "admin@nutask.in",
+      "phone": "8383747438",
+      "avatar": "A"
+    },
+    {
+      "id": "c92e",
+      "name": "Tata",
+      "ref": "CLNT-0017",
+      "contactName": "Smoke Detector",
+      "email": "admin@nutask.in",
+      "phone": "8383747438",
+      "avatar": "A"
+    },
+    {
+      "id": "13db",
+      "name": "Toyato",
+      "ref": "CLNT-0017",
+      "contactName": "Smoke Detector",
+      "email": "jeevan.802332@sxcce.edu.in",
+      "phone": "8383747438",
+      "avatar": "A"
+    },
+    {
+      "id": "3841",
+      "name": "poda",
+      "ref": "CLNT-0017",
+      "contactName": "Smoke Detector",
+      "email": "admin@nutask.in",
+      "phone": "8383747438",
+      "avatar": "A"
+    }
+  ]
+}

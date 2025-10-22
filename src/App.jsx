@@ -12,7 +12,7 @@ import Forms from './components/Forms';
 import Report from './components/Report';
 import Email from './components/Email';
 import Setting from './components/Setting';
-import Add from './components/Add';
+import Input from './components/Input';
 
 
 function App() {
@@ -32,6 +32,7 @@ function App() {
           <Route path='report' element={<Report />} />
           <Route path='email' element={<Email />} />
           <Route path='setting' element={<Setting />} />
+          <Route path='input' element={<Input />} />
 
         </Route>
 

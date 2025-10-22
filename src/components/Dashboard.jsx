@@ -1,88 +1,31 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 
-const clients = [
-  {
-    name: "testing",
-    ref: "CLNT-0017",
-    contactName: "Emma Johnson",
-    email: "testdd@gmail.com",
-    phone: "+91 8874563215",
-    avatar: "T",
-  },
-  {
-    name: "Antrim",
-    ref: "CLNT-0016",
-    contactName: "Peter",
-    email: "amtrimw@gmail.com",
-    phone: "9003976023",
-    avatar: "A",
-  },
-  {
-    name: "Parkqwik",
-    ref: "CLNT-0015",
-    contactName: "James Brown",
-    email: "parkqwik@gmail.com",
-    phone: "+91 9003976093",
-    avatar: "P", 
-  },
-  {
-    name: "newcom",
-    ref: "CLNT-0014",
-    contactName: "Emma Johnson",
-    email: "test@gmail.com",
-    phone: "+91 8874563211",
-    avatar: "N",
-  },
-  {
-    name: "Tcs Tech",
-    ref: "CLNT-0013",
-    contactName: "Roy",
-    email: "techtcs@gmail.com",
-    phone: "+91 9003976321",
-    avatar: "T",
-  },
-  {
-    name: "newcom",
-    ref: "CLNT-0012",
-    contactName: "Emma Johnson",
-    email: "oliva@gmail.com",
-    phone: "+91 9632285214",
-    avatar: "N",
-  },
-  {
-    name: "Energie",
-    ref: "CLNT-0009",
-    contactName: "Ann",
-    email: "ann@ann.com",
-    phone: "0",
-    avatar: "E",
-  },
-  {
-    name: "Zoho",
-    ref: "CLNT-0007",
-    contactName: "John Doe",
-    email: "zoho@gmail.com",
-    phone: "9003976034",
-    avatar: "Z",
-  },
-  {
-    name: "Zoho",
-    ref: "CLNT-0007",
-    contactName: "John Doe",
-    email: "zoho@gmail.com",
-    phone: "9003976034",
-    avatar: "Z",
-  }
-];
+
 
 function Dashboard() {
+
+  const[user,setUser] = useState([])
+
+  useEffect(()=>{
+    takenData()
+
+  },[])
+
+  const takenData = () =>{
+    fetch('http://localhost:3000/clients')
+    .then((res) => res.json())
+    .then((aron) => setUser(aron))
+
+  }
+  console.log(user);
+  
   return (
     <div className=''>
       <button className=' bg-green-600 px-2 py-1  text-white rounded-[10px_10px_0px_0px]'>Client</button>
 
-      <div className=' w-full h-[430px] bg-gray-50 px-4 py-4 overflow-auto'>
-        <div className="grid grid-cols-4 gap-4 overflow-auto ">
-          {clients.map((client, index) => (
+      <div className=' w-full h-[430px] bg-gray-50 px-4 py-4 overflow-y-auto'>
+        <div className="grid grid-cols-4 gap-4  ">
+          {user.map((client, index) => (
             <div key={index} className="bg-white rounded-lg shadow p-4 relative">
               <div className="flex justify-between items-start mb-4">
                 <div className="flex items-center space-x-2">
@@ -120,6 +63,7 @@ function Dashboard() {
           ))}
         </div>
       </div>
+      
     </div>
   )
 }
