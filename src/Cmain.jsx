@@ -8,24 +8,24 @@ function Cmain() {
 
     return (
         <div>
-            <div className=' grid grid-cols-[5%_95%] grid-rows-[78px_89%] '>
+            <div className=' grid grid-cols-[5%_95%] grid-rows-[65px_91%] '>
                 <div
                     onMouseEnter={() => setText(1)}
                     onMouseLeave={() => setText(null)}
-                    className=' w-[100%] row-span-2 p-2 h-full shadow-[0_0_4px_green] hover:w-52 transition-all duration-300 ease-in-out bg-white z-80' >
+                    className=' w-[100%] row-span-2 p-2 h-full shadow-[0_0_4px_green] hover:w-52 transition-all duration-300 ease-in-out bg-white z-50' >
                     <img className=' w-[100%] max-w-12 sticky' src={first} alt="" />
                     <div className='  h-[85vh] '>
                         <div className=' flex flex-col ml-2 mt-5'>
                             <NavLink to="/">
                                 {text ?
                                     (<div className="font-medium w-full px-1.5 py-1 rounded-xl hover:bg-green-100 transition-discrete duration-300 delay-1000">
-                                        <i className="fa-solid fa-user mr-2"></i>Profile
+                                        <i className="fa-solid fa-user mr-2"></i>Client
                                     </div>)
-                                   : (
-                                    <button className="px-1.5 py-1">
-                                        <i className="fa-solid fa-user"></i>
-                                    </button>
-                                )}
+                                    : (
+                                        <button className="px-1.5 py-1">
+                                            <i className="fa-solid fa-user"></i>
+                                        </button>
+                                    )}
                             </NavLink>
                             <br />
 
@@ -48,7 +48,7 @@ function Cmain() {
                             <NavLink to="/task">
                                 {text ? (
                                     <div className="font-medium w-full px-1.5 py-1 rounded-xl hover:bg-green-100">
-                                        <i className="fa-solid fa-list-check mr-2"></i>Contact
+                                        <i className="fa-solid fa-list-check mr-2"></i>Quotation
                                     </div>
                                 ) : (
                                     <button className="px-1.5 py-1">
@@ -155,10 +155,13 @@ function Cmain() {
                             </button> */}
                         </div>
                         <div className="flex items-cente space-x-2">
-                            <input type="text" className=' border ${display} border-black' />
                             <button className="p-1 bg-white rounded hover:bg-amber-300"><i className="fa-solid fa-magnifying-glass"></i></button>
-                            <button className="p-1 bg-white rounded hover:bg-gray-200"><i className="fa-solid fa-list"></i></button>
-                            <button className="p-1 bg-green-600 text-white rounded hover:bg-green-800"><i className="fa-solid fa-wallet"></i></button>
+                            <NavLink to={"/cross"}>
+                                <button className="p-1 bg-white rounded hover:bg-gray-200"><i className="fa-solid fa-list"></i></button>
+                            </NavLink>
+                            <NavLink to={"/"}>
+                                <button className="p-1 bg-green-600 text-white rounded hover:bg-green-800"><i className="fa-solid fa-wallet"></i></button>
+                            </NavLink>
                             <button className="p-1 bg-green-600 text-white rounded hover:bg-green-800"><i className="fa-solid fa-filter"></i></button>
                             <button className="p-1 bg-green-600 text-white rounded hover:bg-green-800"><i className="fa-solid fa-file-import"></i></button>
                             <button className="p-1 bg-green-600 text-white rounded hover:bg-green-800"><i className="fa-solid fa-file-export"></i></button>

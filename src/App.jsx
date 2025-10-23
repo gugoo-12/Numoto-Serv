@@ -13,6 +13,8 @@ import Report from './components/Report';
 import Email from './components/Email';
 import Setting from './components/Setting';
 import Input from './components/Input';
+import Cross from './components/Cross';
+import Delete from './components/Delete';
 
 
 function App() {
@@ -33,6 +35,8 @@ function App() {
           <Route path='email' element={<Email />} />
           <Route path='setting' element={<Setting />} />
           <Route path='input' element={<Input />} />
+          <Route path='cross' element={<Cross />} />
+          <Route path='delete' element={<Delete />} />
 
         </Route>
 

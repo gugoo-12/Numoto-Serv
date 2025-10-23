@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Formik, useFormik } from 'formik'
 import { useNavigate } from 'react-router-dom'
 import { toast, ToastContainer } from 'react-toastify'
@@ -7,7 +7,7 @@ import 'react-toastify/dist/ReactToastify.css'
 
 function Input() {
 
-  const navigate = useNavigate()
+  const navigate = useNavigate(1)
 
   const formik = useFormik({
     initialValues: {
@@ -19,18 +19,38 @@ function Input() {
     onSubmit: async (values) => {
       if (values.cname && values.name && values.email && values.num) {
         try {
+          // 1. Get all clients to find the last ref number
+          const getRes = await fetch('http://localhost:3000/clients');
+          const clients = await getRes.json();
+
+          // 2. Find the max number from existing refs
+          let maxNum = 0;
+          clients.forEach(client => {
+            const numPart = parseInt(client.ref.split('-')[1]);
+            if (numPart > maxNum) maxNum = numPart;
+          });
+
+          // 3. Increment for new client
+          const newRef = `CLNT-${String(maxNum + 1).padStart(3, '0')}`;
+
+
+          // 4. Create avatar from first letter of company name
+          const avatar = values.cname.trim().charAt(0).toUpperCase();
+
+
           const res = await fetch('http://localhost:3000/clients', {
             method: "POST",
             headers: { "Content-type": "application/json" },
             body: JSON.stringify({
               name: values.cname,
-              ref: "CLNT-0017",
+              ref: newRef,
               contactName: values.name,
               email: values.email,
               phone: values.num,
-              avatar: "A"
+              avatar: avatar
             })
           })
+
           if (res.ok) {
             toast.success("Client added successfully!", {
               position: "bottom-right",
@@ -47,7 +67,6 @@ function Input() {
           toast.error("⚠️ Error submitting form!")
           console.error("Error submitting form:", error)
         }
-
       }
     },
     validate: values => {
@@ -79,7 +98,7 @@ function Input() {
   })
   return (
     <div>
-      <button className=' bg-green-600 px-2 py-1  text-white rounded-[10px_10px_0px_0px]'>Client</button>
+      <button className=' bg-green-600 px-2 text-white rounded-[8px_8px_0px_0px]'>Client</button>
       <div className=' w-full h-[430px] bg-gray-50 px-4 py-4 overflow-y-auto'>
         <form onSubmit={formik.handleSubmit} className="max-w-3xl mx-auto p-8 bg-white shadow-lg rounded-2xl mt-5">
           <h2 className="text-2xl font-semibold text-center text-green-600 mb-6">

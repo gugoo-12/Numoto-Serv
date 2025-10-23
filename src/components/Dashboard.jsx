@@ -11,8 +11,8 @@ function Dashboard() {
 
   },[])
 
-  const takenData = () =>{
-    fetch('http://localhost:3000/clients')
+  const  takenData = async () =>{
+    await fetch('http://localhost:3000/clients')
     .then((res) => res.json())
     .then((aron) => setUser(aron))
 
@@ -21,9 +21,9 @@ function Dashboard() {
   
   return (
     <div className=''>
-      <button className=' bg-green-600 px-2 py-1  text-white rounded-[10px_10px_0px_0px]'>Client</button>
+      <button className=' bg-green-600 px-2 text-white rounded-[8px_8px_0px_0px]'>Client</button>
 
-      <div className=' w-full h-[430px] bg-gray-50 px-4 py-4 overflow-y-auto'>
+      <div className=' w-full h-[445px] bg-gray-50 px-4 py-4 overflow-y-auto'>
         <div className="grid grid-cols-4 gap-4  ">
           {user.map((client, index) => (
             <div key={index} className="bg-white rounded-lg shadow p-4 relative">
