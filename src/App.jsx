@@ -15,6 +15,9 @@ import Setting from './components/Setting';
 import Input from './components/Input';
 import Cross from './components/Cross';
 import Delete from './components/Delete';
+import QuInput from './components/QuInput';
+import KulistData from './local data/KulistData';
+import ContractInput from './inputs/ContractInput';
 
 
 function App() {
@@ -37,8 +40,11 @@ function App() {
           <Route path='input' element={<Input />} />
           <Route path='cross' element={<Cross />} />
           <Route path='delete' element={<Delete />} />
+          <Route path='quinput' element={<QuInput />} />
+          <Route path='contractIn' element={<ContractInput/>} />
 
         </Route>
+        <Route path ='kulist' element={<KulistData/>} />
 
       </Routes>
     </BrowserRouter>

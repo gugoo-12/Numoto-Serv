@@ -1,11 +1,138 @@
-import React from 'react'
+import React, { useState } from 'react'
+import { NavLink } from 'react-router-dom'
+import PageShowing from '../local data/PageShowing'
+import FilterInput from '../local data/FilterInput'
+import Ixport from '../local data/Ixport'
+import Breadcrumb from '../local data/Breadcrumb'
 
 function Contract() {
-  return (
-   <div className="w-full bg-gray-50 px-4 py-4 overflow-y-auto h-[200px]">
+  const [inputbut, setInputbut] = useState(false)
+  const [filter, setFilter] = useState(false)
+  const [ixport, setixport] = useState(false)
 
-      Contract
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque ex voluptatem Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deserunt dolor esse vitae recusandae voluptate necessitatibus culpa inventore ducimus. Reiciendis dolorum veniam repudiandae officia fuga natus aspernatur debitis, porro rem id illo autem, quas deserunt! Ex, voluptas laudantium ipsa magni possimus rerum vitae mollitia inventore. Corporis numquam assumenda quidem ratione accusamus rerum dolorem dignissimos repudiandae fugit, repellendus ipsa distinctio recusandae fuga perspiciatis nihil, provident sit commodi nisi. Blanditiis culpa facilis consectetur maxime, illo, debitis, aut nulla magni consequuntur autem ipsa sunt delectus accusantium rem fuga voluptatibus. Provident tempore officiis cumque saepe. Dolorem nobis porro amet enim maxime esse pariatur voluptatibus quo, nemo voluptatum consequatur natus voluptatem debitis iste perferendis similique consequuntur minus earum labore ipsum cumque libero temporibus nostrum optio! Cumque dolorum eum velit, vero atque illum distinctio debitis reiciendis. Quo sunt amet maiores dolorum adipisci nihil consequatur aperiam corrupti placeat perferendis magni ad, fuga, odit voluptate. Unde modi nihil fugiat ducimus repellendus inventore eaque laudantium accusamus, iste quasi totam architecto assumenda fugit beatae recusandae nobis odio aspernatur porro nostrum earum sunt reprehenderit id ab. Suscipit consectetur soluta autem repellendus consequatur dicta at magni rem, eaque dolorem debitis dignissimos. Animi reprehenderit temporibus nobis cupiditate mollitia provident, obcaecati porro ea repudiandae ducimus natus ex veritatis quidem numquam sint quis officia tenetur expedita amet! Maiores harum et sequi hic odit tenetur dolore. Vero, ad aperiam suscipit porro maxime atque doloribus nesciunt hic sit quam minima voluptatibus necessitatibus voluptates incidunt ullam, dolorem, repudiandae libero possimus laudantium modi provident cum. Magnam inventore provident excepturi fuga atque dolorem qui reprehenderit, aliquid a at! Voluptates cupiditate esse suscipit! Quia fuga aperiam iure sequi? Quae aut facere iure possimus quia nesciunt provident maxime quaerat a quibusdam expedita exercitationem, suscipit beatae voluptas, atque dicta molestiae esse placeat culpa consequuntur alias quasi! Facere commodi molestiae ut maxime nostrum dolorem tempora quia provident labore, beatae cum natus repellat quisquam eum veritatis corrupti optio minus nam aut sit a velit. Mollitia architecto facere ipsum vitae minus eum magnam quam sapiente, explicabo obcaecati praesentium similique minima. Cupiditate architecto officia error reprehenderit possimus modi assumenda eveniet, exercitationem repellat distinctio fugiat in numquam deserunt voluptates neque velit accusamus magni voluptatem sunt maxime provident quidem minima natus repudiandae. Assumenda, dicta repellat. Beatae esse tempore numquam minima rem! Modi, deserunt debitis id harum blanditiis autem dignissimos totam eius fugit repudiandae voluptatibus? Officia dignissimos minima corporis omnis voluptatibus architecto nemo, dolor, nam perferendis tenetur accusantium animi ipsam nihil sequi! Aut dolor quis ipsum adipisci officia, porro earum sit laboriosam. Itaque facilis illo excepturi officiis officia, eligendi provident assumenda ut aliquid perferendis ullam corrupti fuga culpa quas necessitatibus corporis placeat architecto nihil cumque, rem temporibus repellendus sapiente reprehenderit molestiae! Earum animi assumenda cumque? Esse consequuntur eveniet, perspiciatis architecto possimus officiis dicta sint natus porro nemo dolorem inventore veniam, temporibus quis eaque? Aspernatur voluptatum non omnis veniam, quia aliquam pariatur perspiciatis suscipit doloribus labore dignissimos dolorum? Fugiat distinctio asperiores a modi quasi et nisi doloribus eius repellendus numquam? Eius odio placeat molestias hic dolore architecto autem officia, voluptatem illum laudantium quia, vel enim magnam, qui sapiente obcaecati harum. Dignissimos, nihil. Facere asperiores dicta repudiandae sunt, at nesciunt fuga. Laborum, similique quibusdam. Reprehenderit inventore, eveniet tenetur ut dolorem ipsum pariatur corrupti repudiandae atque praesentium? Nobis veniam impedit quae modi quasi cupiditate aliquid velit officia nesciunt vitae reiciendis, sequi, commodi iste earum cumque doloremque sunt voluptatibus sint error. Dignissimos officiis cumque eaque eos debitis atque, modi accusantium, doloribus eum consequuntur dolores animi blanditiis qui? Provident quo temporibus quasi illum distinctio a velit consectetur excepturi est, rerum vitae error maiores beatae doloribus tempore? Et aut ducimus reiciendis facilis porro earum explicabo modi qui dolorem nobis aliquid quis quod, possimus velit illum, sunt ea, sapiente fugiat ipsum doloribus laboriosam labore illo. Mollitia sequi impedit libero! In distinctio neque eos quae ea assumenda similique tenetur animi quaerat cumque voluptatum, libero earum dolores maxime minima dolorem! Commodi illo animi dolor dicta dolores totam reiciendis. Asperiores tempore quos, atque nemo at totam earum perferendis! Quasi perferendis exercitationem minima consequuntur consectetur id. Pariatur maiores, praesentium facilis tempore dolores quod tempora sunt illum nam laboriosam ullam maxime voluptates id assumenda. Amet mollitia at illo delectus quo quae quisquam sed laborum iusto voluptates non temporibus id, est asperiores doloribus veritatis repellendus voluptas veniam eos eaque libero doloremque. Molestias, ea quia ratione tempora incidunt, dolorem non voluptate itaque eum dolor aliquid ipsam. Dolorem ea exercitationem atque culpa laborum mollitia, quaerat aliquam reprehenderit hic. Alias, at dolore? Pariatur minus voluptatibus amet magnam atque exercitationem assumenda velit nostrum hic iure tempore minima possimus distinctio, blanditiis nesciunt impedit dolorem quia veniam mollitia placeat obcaecati natus cupiditate praesentium. Molestias doloremque consequuntur minus ex asperiores necessitatibus maxime tenetur nemo velit! Odio, iste? Nihil sequi tenetur natus voluptatem, nisi reiciendis aut fugiat repellendus earum dolore fugit saepe doloribus ratione nam excepturi impedit facere, cum velit aspernatur tempore placeat quam? Officiis reprehenderit fugit modi veritatis libero ratione quae a laudantium aperiam maxime similique perferendis asperiores magnam vel, excepturi alias veniam maiores ullam sunt quidem at. Voluptatem nulla tempora similique esse iusto, ipsam iste architecto sapiente, corrupti debitis illo. Dolor illo alias deserunt voluptate. Sapiente maiores ex, expedita ratione accusantium ipsam modi nobis, cumque eum veniam vero corporis? Nesciunt in odio, dicta reiciendis vitae hic quis ipsa, temporibus tenetur vel porro reprehenderit iure possimus dolores, esse dolor rerum laborum quam nemo repudiandae illum. Eligendi, labore aut. Nostrum, suscipit quia voluptates, error esse dolorem, voluptatum fugit exercitationem assumenda tempore asperiores molestias optio a dolorum? Veritatis quaerat deserunt aperiam soluta. Maxime tempore libero quasi facere dignissimos blanditiis, quo aliquam doloribus culpa quaerat maiores quos neque nemo repellat tempora rem fuga atque reiciendis facilis deserunt ratione nobis! Explicabo eos sequi facilis illo minima, eius error voluptas aperiam magnam minus debitis officiis inventore tempora. Laudantium maxime recusandae dolorum sapiente possimus! Voluptates vel mollitia nemo ipsa numquam perspiciatis similique enim porro odit illo nisi officiis laudantium reiciendis modi dolore esse nobis quas, consectetur excepturi tempore quam corrupti fugiat ad. Molestiae quos ipsa suscipit quaerat! Minus harum, tempora sapiente ratione voluptate totam animi reiciendis qui. error esse in, eligendi illo quisquam atque laborum possimus quidem consequatur, ea beatae quia.</p>
+  let user = [
+    {
+      ref: "T-0001",
+      client1: "Anto Tech",
+      tprice: "SAR 143.00",
+      date: "02-09-2002",
+      validity: "2 Years",
+      status: "Draft"
+    },
+    {
+      ref: "T-0002",
+      client1: "Nexus Labs",
+      tprice: "SAR 259.00",
+      date: "15-09-2002",
+      validity: "1 Year",
+      status: "Active"
+    },
+  ]
+
+  return (
+    <div className="font-[Inter] text-gray-800">
+      {filter && <FilterInput show={filter} handleClose={() => setFilter(!filter)} />}
+      {ixport && <Ixport show={ixport} handleClose={() => setixport(!ixport)} />}
+
+      {/* Breadcrumb */}
+      <div className="flex items-center justify-between mb-3">
+        <Breadcrumb name={'Quotation'} ishidden={false} secName={''} />
+
+        {/* Navbar Buttons */}
+        <div className="flex items-center space-x-2">
+          {inputbut ? (
+            <div className=' py-1 px-3 rounded-md bg-white shadow-sm border border-gray-200 flex items-center transition-all duration-300'>
+              <input
+                placeholder='Search here'
+                type="text"
+                className='focus:outline-none text-sm text-gray-700 w-34'
+              />
+              <button
+                onClick={() => setInputbut(false)}
+                className="text-green-700 text-sm ">
+                <i className="fa-solid fa-magnifying-glass"></i>
+              </button>
+            </div>
+          ) : (
+            <button
+              onClick={() => setInputbut(true)}
+              className="p-1.5 rounded-md text-sm border border-gray-200 bg-white text-green-600 hover:bg-gray-100 transition-all duration-300">
+              <i className="fa-solid fa-magnifying-glass "></i>
+            </button>
+          )}
+
+          <button
+            onClick={() => setFilter(true)}
+            className="p-1.5 rounded-md text-sm bg-green-600 text-white hover:bg-green-500 transition-all duration-300">
+            <i className="fa-solid fa-filter text-[15px]"></i>
+          </button>
+          <button
+            onClick={() => setixport(true)}
+            className="p-1.5 rounded-md text-sm bg-green-600 text-white hover:bg-green-500 transition-all duration-300">
+            <i className="fa-solid fa-file-export text-[15px]"></i>
+          </button>
+          <NavLink to={'/quinput'}>
+            <button className="p-1.5 rounded-md text-sm bg-green-600 text-white hover:bg-green-500 transition-all duration-300">
+              <i className="fa-solid fa-plus text-[15px]"></i>
+            </button>
+          </NavLink>
+        </div>
+      </div>
+
+      {/* Header Tabs */}
+      <div className="flex items-center space-x-3 text-xs ml-1 font-medium">
+        <button className="bg-green-500 text-white px-4 py-1 rounded-t-md shadow-sm">Quotation</button>
+        <div>
+          <button className="bg-white border border-green-500 px-2.5 py-0.5 rounded-l-full">Total</button>
+          <button className="bg-green-500 text-white border border-green-500 px-2.5 py-0.5 rounded-r-full">
+            {user.length}
+          </button>
+        </div>
+      </div>
+
+      {/* Table */}
+      <div className='w-full h-[440px] bg-white px-4 py-4 overflow-y-auto rounded-md shadow-sm border border-gray-100'>
+        <table className='w-full'>
+          <thead className="text-[13px] font-semibold text-gray-700 border-b">
+            <tr>
+              <th className="py-3 px-4 text-left">
+                <input className='mr-1' type="checkbox" /> Ref
+              </th>
+              <th className="py-3 px-4 text-left">Client</th>
+              <th className="py-3 px-4 text-left">Total Price</th>
+              <th className="py-3 px-4 text-left">Date</th>
+              <th className="py-3 px-4 text-left">Validity</th>
+              <th className="py-3 px-4 text-left">Status</th>
+              <th className="py-3 px-4 text-left">Action</th>
+            </tr>
+          </thead>
+          <tbody className='text-gray-600 text-[13px]'>
+            {user.map((client) => (
+              <tr
+                key={client.ref}
+                className="border-t border-gray-100 hover:bg-green-50 transition-all duration-200"
+              >
+                <td className="py-2 px-4">
+                  <input className='mr-1' type="checkbox" /> {client.ref}
+                </td>
+                <td className="py-2 px-4">{client.client1}</td>
+                <td className="py-2 px-4">{client.tprice}</td>
+                <td className="py-2 px-4">{client.date}</td>
+                <td className="py-2 px-4">{client.validity}</td>
+                <td className="py-2 px-4">{client.status}</td>
+                <td className="py-2 px-4 flex items-center space-x-2">
+                  <button><i className="fa-solid fa-eye text-green-600 text-[15px]"></i></button>
+                  <button><i className="fa-solid fa-pen-to-square text-blue-600 text-[15px]"></i></button>
+                  <button><i className="fa-solid fa-trash text-red-600 text-[15px]"></i></button>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      {/* Page Footer */}
+      <PageShowing />
     </div>
   )
 }

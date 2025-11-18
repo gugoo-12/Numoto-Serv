@@ -1,24 +1,6 @@
 {
   "clients": [
     {
-      "name": "testing",
-      "ref": "CLNT-0017",
-      "contactName": "Emma Johnson",
-      "email": "testdd@gmail.com",
-      "phone": "+91 8874563215",
-      "avatar": "T",
-      "id": "2f42"
-    },
-    {
-      "name": "Antrim",
-      "ref": "CLNT-0016",
-      "contactName": "Peter",
-      "email": "amtrimw@gmail.com",
-      "phone": "9003976023",
-      "avatar": "A",
-      "id": "4739"
-    },
-    {
       "name": "Parkqwik",
       "ref": "CLNT-0015",
       "contactName": "James Brown",
@@ -35,6 +17,36 @@
       "phone": "+91 8874563211",
       "avatar": "N",
       "id": "2539"
+    },
+    {
+      "id": "b527",
+      "name": "Audi",
+      "ref": "CLNT-018",
+      "contactName": "jeevan",
+      "email": "jeevanlesly22@gmail.com",
+      "phone": "8383747438",
+      "avatar": "A"
+    }
+  ],
+
+  "surveys":[
+    {
+      "ref":"A144",
+      "client":"Arun",
+      "assignee":"rahul",
+      "project":"IOT",
+      "location":"Thoothoor",
+      "date":"12-09-2002",
+      "status":"No"
+    },
+    {
+      "ref":"A145",
+      "client":"Arun",
+      "assignee":"rahul",
+      "project":"IOT",
+      "location":"Thoothoor",
+      "date":"12-09-2002",
+      "status":"No"
     }
   ]
 }

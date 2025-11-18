@@ -1,183 +1,161 @@
-import React, { useState } from 'react'
-import first from "./images/star-removebg-preview.png"
+import React, { useState } from 'react';
+import first from "./images/star-removebg-preview.png";
 import { NavLink, Outlet } from "react-router-dom";
 
-
 function Cmain() {
-    const [text, setText] = useState(null)
+    const [isExpanded, setIsExpanded] = useState(false);
+
+    const navItems = [
+        { to: "/", icon: "fa-solid fa-user", label: "Client" },
+        { to: "/contract", icon: "fa-solid fa-file-contract", label: "Quotation"},
+        { to: "/task", icon: "fa-solid fa-list-check", label: "Contract"},
+        { to: "/team", icon: "fa-brands fa-teamspeak", label: "Team" },
+        { to: "/invoice", icon: "fa-solid fa-file-invoice", label: "Inspection"},
+        { to: "/forms", icon: "fa-brands fa-wpforms", label: "Forms"},
+        { to: "/report", icon: "fa-solid fa-bug", label: "Report"},
+        { to: "/email", icon: "fa-solid fa-envelope", label: "Email"},
+    ];
+
+    const NavItem = ({ to, icon, label, delay }) => (
+        <NavLink
+            to={to}
+            className={({ isActive }) =>
+                `flex items-center rounded-lg transition-all duration-200 font-medium group ${isActive
+                    ? 'bg-green-500 text-white shadow-md'
+                    : 'text-gray-700 hover:bg-green-50 hover:text-green-700'
+                } ${isExpanded ? 'px-3 py-2' : 'px-1 py-1.5 justify-center'}`
+            }
+        >
+            {isExpanded ? (
+                <div
+                    className="flex items-center w-full"
+                    style={{
+                        animation: `fadeInSlide 200ms ease-out 100ms forwards`,
+                        opacity: 0,
+                        transform: 'translateX(-10px)'
+                    }}
+                >
+                    <i className={`${icon} mr-3 text-base w-5 text-center`}></i>
+                    <span className="font-medium tracking-wide whitespace-nowrap text-sm">{label||'e'}</span>
+                </div>
+            ) : (
+                <div className="w-full flex pl-[5px]">
+                    <div className="rounded-lg transition-colors duration-200">
+                        <i className={`${icon} text-base`}></i>
+                    </div>
+                </div>
+            )}
+        </NavLink>
+    );
 
     return (
-        <div>
-            <div className=' grid grid-cols-[5%_95%] grid-rows-[65px_91%] '>
-                <div
-                    onMouseEnter={() => setText(1)}
-                    onMouseLeave={() => setText(null)}
-                    className=' w-[100%] row-span-2 p-2 h-full shadow-[0_0_4px_green] hover:w-52 transition-all duration-300 ease-in-out bg-white z-50' >
-                    <img className=' w-[100%] max-w-12 sticky' src={first} alt="" />
-                    <div className='  h-[85vh] '>
-                        <div className=' flex flex-col ml-2 mt-5'>
-                            <NavLink to="/">
-                                {text ?
-                                    (<div className="font-medium w-full px-1.5 py-1 rounded-xl hover:bg-green-100 transition-discrete duration-300 delay-1000">
-                                        <i className="fa-solid fa-user mr-2"></i>Client
-                                    </div>)
-                                    : (
-                                        <button className="px-1.5 py-1">
-                                            <i className="fa-solid fa-user"></i>
-                                        </button>
-                                    )}
-                            </NavLink>
-                            <br />
-
-                            <NavLink to="/contract">
-                                {text ? (
-                                    <div className="font-medium w-full px-1.5 py-1 rounded-xl bg-white hover:bg-green-100">
-                                        <i className="fa-solid fa-file-contract mr-2"></i>
-                                        <span className="inline-block transition-all duration-500 delay-1000 ease-in-out">
-                                            Contract
-                                        </span>
-                                    </div>
-                                ) : (
-                                    <button className="px-1.5 py-1">
-                                        <i className="fa-solid fa-file-contract"></i>
-                                    </button>
-                                )}
-                            </NavLink>
-                            <br />
-
-                            <NavLink to="/task">
-                                {text ? (
-                                    <div className="font-medium w-full px-1.5 py-1 rounded-xl hover:bg-green-100">
-                                        <i className="fa-solid fa-list-check mr-2"></i>Quotation
-                                    </div>
-                                ) : (
-                                    <button className="px-1.5 py-1">
-                                        <i className="fa-solid fa-list-check"></i>
-                                    </button>
-                                )}
-                            </NavLink>
-                            <br />
-
-                            <NavLink to="/team">
-                                {text ? (
-                                    <div className="font-medium w-full px-1.5 py-1 rounded-xl hover:bg-green-100">
-                                        <i className="fa-brands fa-teamspeak mr-2"></i>Team
-                                    </div>
-                                ) : (
-                                    <button className="px-1.5 py-1">
-                                        <i className="fa-brands fa-teamspeak"></i>
-                                    </button>
-                                )}
-                            </NavLink>
-                            <br />
-
-                            <NavLink to="/invoice">
-                                {text ? (
-                                    <div className="font-medium w-full px-1.5 py-1 rounded-xl hover:bg-green-100">
-                                        <i className="fa-solid fa-file-invoice mr-2"></i>Invoice
-                                    </div>
-                                ) : (
-                                    <button className="px-1.5 py-1">
-                                        <i className="fa-solid fa-file-invoice"></i>
-                                    </button>
-                                )}
-                            </NavLink>
-                            <br />
-
-                            <NavLink to="/forms">
-                                {text ? (
-                                    <div className="font-medium w-full px-1.5 py-1 rounded-xl hover:bg-green-100">
-                                        <i className="fa-brands fa-wpforms mr-2"></i>Forms
-                                    </div>
-                                ) : (
-                                    <button className="px-1.5 py-1">
-                                        <i className="fa-brands fa-wpforms"></i>
-                                    </button>
-                                )}
-                            </NavLink>
-                            <br />
-
-                            <NavLink to="/report">
-                                {text ? (
-                                    <div className="font-medium w-full px-1.5 py-1 rounded-xl hover:bg-green-100">
-                                        <i className="fa-solid fa-bug mr-2"></i>Report
-                                    </div>
-                                ) : (
-                                    <button className="px-1.5 py-1">
-                                        <i className="fa-solid fa-bug"></i>
-                                    </button>
-                                )}
-                            </NavLink>
-                            <br />
-
-                            <NavLink to="/email">
-                                {text ? (
-                                    <div className="font-medium w-full px-1.5 py-1 rounded-xl hover:bg-green-100">
-                                        <i className="fa-solid fa-envelope mr-2"></i>Email
-                                    </div>
-                                ) : (
-                                    <button className="px-1.5 py-1">
-                                        <i className="fa-solid fa-envelope"></i>
-                                    </button>
-                                )}
-                            </NavLink>
-
-                        </div>
-                        <div className=' relative top-[14%] ml-2'>
-                            <NavLink to='/setting'>
-                                <button className="px-1.5 py-1 bg-green-200 rounded-xs">
-                                    <i class="fa-solid fa-gear"></i>
-                                </button>
-                            </NavLink>
-                        </div>
-                    </div>
-
-
+        <div className="min-h-screen bg-gray-50 relative font-[Inter]">
+            {/* Sidebar - Fixed so it doesn’t push other divs */}
+            <div
+                onMouseEnter={() => setIsExpanded(true)}
+                onMouseLeave={() => setIsExpanded(false)}
+                className={`
+                    fixed left-0 top-0 h-full bg-white shadow-2xl border-r border-gray-200 
+                    transition-all duration-300 ease-in-out z-40 flex flex-col
+                    ${isExpanded ? 'w-56' : 'w-16'}
+                `}
+            >
+                {/* Logo */}
+                <div className={`flex items-center border-b border-gray-100 ${isExpanded ? 'px-4 py-3 justify-start' : ' py-3 pl-4 '}`}>
+                    <img className="w-8 h-8 transition-transform duration-300" src={first} alt="Logo" />
+                    {isExpanded && (
+                        <h2
+                            style={{
+                                animation: `fadeInSlide 200ms ease-out 100ms forwards`,
+                                opacity: 0,
+                                transform: 'translateX(-10px)'
+                            }}
+                            className="ml-3 text-lg font-bold text-gray-800 tracking-tight whitespace-nowrap">
+                            Numota
+                        </h2>
+                    )}
                 </div>
-                <div className=' p-2 px-4 w-[100%] h-full flex justify-between shadow-[3px_0_4px_green] items-center z-20'>
-                    <div>
-                        <h1 className=' text-2xl font-bold'>Numota</h1>
-                    </div>
-                    <div className=' flex justify-between border-2 w-[15%] '>
-                        <p>a</p>
-                        <p className=''>b</p>
-                        <p className=' '>c</p>
-                        <h3 className=''>Admin</h3>
-                    </div>
-                </div>
-                <div className=' p-4 bg-[#CCE6D7] z-10'>
-                    <div className="flex items-center justify-between mb-1">
-                        <div className="flex items-center space-x-2">
-                            <button className=" bg-[#CCE6D7] text-[#CCE6D7] px-2 py-2 rounded">Clients</button>
-                            {/* <button className="bg-white px-4 py-2 rounded border border-gray-300 flex items-center space-x-1">
-                                <span>Total</span>
-                                <span className="bg-green-600 text-white rounded-full px-2">{clients.length}</span>
-                            </button> */}
-                        </div>
-                        <div className="flex items-cente space-x-2">
-                            <button className="p-1 bg-white rounded hover:bg-amber-300"><i className="fa-solid fa-magnifying-glass"></i></button>
-                            <NavLink to={"/cross"}>
-                                <button className="p-1 bg-white rounded hover:bg-gray-200"><i className="fa-solid fa-list"></i></button>
-                            </NavLink>
-                            <NavLink to={"/"}>
-                                <button className="p-1 bg-green-600 text-white rounded hover:bg-green-800"><i className="fa-solid fa-wallet"></i></button>
-                            </NavLink>
-                            <button className="p-1 bg-green-600 text-white rounded hover:bg-green-800"><i className="fa-solid fa-filter"></i></button>
-                            <button className="p-1 bg-green-600 text-white rounded hover:bg-green-800"><i className="fa-solid fa-file-import"></i></button>
-                            <button className="p-1 bg-green-600 text-white rounded hover:bg-green-800"><i className="fa-solid fa-file-export"></i></button>
-                            <NavLink to="/input">
-                                <button className="p-1 bg-green-600 text-white rounded hover:bg-green-800"><i className="fa-solid fa-plus"></i></button>
 
-                            </NavLink>
-                        </div>
-                    </div>
-                    <div>
-                        <Outlet />
-                    </div>
+                {/* Navigation Items */}
+                <div className="flex-1 flex flex-col space-y-1 p-3">
+                    {navItems.map((item) => (
+                        <NavItem key={item.to} {...item} />
+                    ))}
+                </div>
+
+                {/* Settings */}
+                <div className="p-3 border-t border-gray-100">
+                    <NavLink
+                        to="/setting"
+                        className={({ isActive }) =>
+                            `flex items-center rounded-lg transition-all duration-200 ${isActive
+                                ? 'bg-blue-500 text-white'
+                                : 'bg-gray-100 text-gray-700 hover:bg-blue-500 hover:text-white'
+                            } ${isExpanded ? 'px-3 py-2' : 'pl-2.5 py-2'}`
+                        }
+                    >
+                        <i className="fa-solid fa-gear text-base"></i>
+                        {isExpanded && (
+                            <span
+                                style={{
+                                    animation: `fadeInSlide 200ms ease-out 100ms forwards`,
+                                    opacity: 0,
+                                    transform: 'translateX(-10px)'
+                                }}
+                                className="ml-3 font-medium tracking-wide whitespace-nowrap text-sm">Settings</span>
+                        )}
+                    </NavLink>
                 </div>
             </div>
+
+            {/* Main Content */}
+            <div className="ml-16 transition-all duration-300 flex flex-col h-screen">
+                <header className="bg-white shadow-lg border-b border-gray-200 px-6 py-3 z-30">
+                    <div className="flex justify-between items-center">
+                        <div></div>
+                        <div className="flex items-center space-x-3">
+                            <button className="p-2 rounded-lg bg-gray-100 hover:bg-gray-200 transition text-gray-600 hover:text-gray-800">
+                                <i className="fa-solid fa-table-columns text-sm"></i>
+                            </button>
+                            <button className="p-2 rounded-lg bg-gray-100 hover:bg-gray-200 transition text-gray-600 hover:text-gray-800">
+                                <i className="fa-regular fa-message text-sm"></i>
+                            </button>
+                            <button className="p-2 rounded-lg bg-gray-100 hover:bg-gray-200 transition text-gray-600 hover:text-gray-800 relative">
+                                <i className="fa-regular fa-bell text-sm"></i>
+                                <span className="absolute -top-1 -right-1 w-2 h-2 bg-red-500 rounded-full"></span>
+                            </button>
+                            {/* User */}
+                            <div className="flex items-center space-x-2 ml-3 relative group">
+                                <div className="flex items-center space-x-2 cursor-pointer p-1 rounded-lg hover:bg-gray-100 transition">
+                                    <div className="w-8 h-8 bg-gradient-to-br from-green-500 to-blue-500 rounded-full flex items-center justify-center text-white font-semibold text-xs shadow-md">
+                                        A
+                                    </div>
+                                    <div className="flex items-center">
+                                        <span className="font-semibold text-gray-800 text-sm">Admin</span>
+                                        <i className="fa-solid fa-chevron-down text-xs ml-1 text-gray-500 transition-transform duration-200 group-hover:rotate-180"></i>
+                                    </div>
+                                </div>
+                                <div className="absolute right-0 top-10 hidden group-hover:block bg-white shadow-xl border border-gray-200 rounded-lg py-2 min-w-40 z-40">
+                                    <button className="w-full text-left px-3 py-2 text-sm text-gray-700 hover:bg-gray-50 flex items-center">
+                                        <i className="fa-solid fa-user mr-2 text-gray-400"></i>
+                                        Profile
+                                    </button>
+                                    <button className="w-full text-left px-3 py-2 text-sm text-red-600 hover:bg-red-50 flex items-center">
+                                        <i className="fa-solid fa-right-from-bracket mr-2"></i>
+                                        Logout
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </header>
+
+                <main className="flex-1 bg-gray-100 px-2 py-2 overflow-auto">
+                    <Outlet />
+                </main>
+            </div>
         </div>
-    )
+    );
 }
 
-export default Cmain
+export default Cmain;
